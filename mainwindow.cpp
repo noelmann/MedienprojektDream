@@ -1,6 +1,11 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 #include "knowledgebase.h"
+#include <QVBoxLayout>
+#include <QListWidgetItem>
+#include <QDir>
+#include <QCoreApplication>
+#include <QUrl>
 
 QString apiKey = qEnvironmentVariable("GROQ_API_KEY_DREAM");
 
@@ -10,7 +15,85 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    KnowledgeBase kb = KnowledgeBase();
+    player = new QMediaPlayer(this);
+    audioOutput = new QAudioOutput(this);
+    videoWidget = new QVideoWidget(this);
+
+    player->setAudioOutput(audioOutput);
+    player->setVideoOutput(videoWidget);
+
+    auto layout = new QVBoxLayout(ui->videoWidgetContainer);
+
+    layout->setContentsMargins(0,0,0,0);
+    layout->addWidget(videoWidget);
+
+    ui->volumeSlider->setRange(0, 100);
+    ui->volumeSlider->setValue(50);
+
+    audioOutput->setVolume(0.5);
+
+    connect(ui->playButton,
+            &QPushButton::clicked,
+            player,
+            &QMediaPlayer::play);
+
+    connect(ui->pauseButton,
+            &QPushButton::clicked,
+            player,
+            &QMediaPlayer::pause);
+
+    connect(ui->stopButton,
+            &QPushButton::clicked,
+            player,
+            &QMediaPlayer::stop);
+
+    connect(ui->volumeSlider,
+            &QSlider::valueChanged,
+            this,
+            [this](int value)
+            {
+                audioOutput->setVolume(value / 100.0);
+            });
+
+    connect(player,
+            &QMediaPlayer::positionChanged,
+            this,
+            [this](qint64 pos)
+            {
+                ui->timelineSlider->setValue(pos);
+            });
+
+    connect(player,
+            &QMediaPlayer::durationChanged,
+            this,
+            [this](qint64 duration)
+            {
+                ui->timelineSlider->setMaximum(duration);
+            });
+
+    connect(ui->timelineSlider,
+            &QSlider::sliderMoved,
+            player,
+            &QMediaPlayer::setPosition);
+
+
+    connect(ui->videoListWidget,
+            &QListWidget::itemClicked,
+            this,
+            &MainWindow::loadSelectedVideo);
+
+
+    //Todo: auto load item names from video directory
+    ui->videoListWidget->addItem("testA.mp4");
+    ui->videoListWidget->addItem("testB.mp4");
+    ui->videoListWidget->addItem("testC.mp4");
+
+    connect(ui->sendButton,
+            &QPushButton::clicked,
+            this,
+            &MainWindow::sendMessage);
+
+
 }
 
 MainWindow::~MainWindow()
@@ -18,135 +101,31 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::on_btn_playVideo_clicked()
+void MainWindow::sendMessage()
 {
-   /* QString Filename = QFileDialog::getOpenFileName(this,tr("Select video file"),"",tr("MP4 Files(*.MP4)"));
-    QMediaPlayer *player = new QMediaPlayer(this);
-    QVideoWidget *video = new QVideoWidget(this);
-    QAudioOutput *audio = new QAudioOutput(this);
+    QString prompt = ui->chatInput->toPlainText();
 
-    video ->setGeometry(20,20,640,480);
-    player -> setVideoOutput(video);
-    player -> setAudioOutput(audio);
+    if (prompt.isEmpty())
+        return;
 
-    player -> setSource(QUrl(Filename));
 
-    video -> show();
-    player -> play();*/
+    ui->chatInput->clear();
 
-        QMediaPlayer *player = new QMediaPlayer(this);
-        QVideoWidget *video = new QVideoWidget(this);
-        QAudioOutput *audio = new QAudioOutput(this);
-
-        player->setVideoOutput(video);
-        player->setAudioOutput(audio);
-
-        video->setGeometry(20, 20, 640, 480);
-        video->show();
-
-    //QUrl url("qrc:/resources/videos/20250304_155424.mp4");
-        QUrl url("https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4");
-
-        player->setSource(QUrl("https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"));
-        player->play();
-    //player->setSource(url);
-    //player->play();
-
-        //kb.loadWordEmbeddings(R"(D:\germanWordEmbeddings\chunk_aa)");
-
+    //Todo: replace test code with llm call
+    ui->chatHistory->append("You: " + prompt);
+    ui->chatHistory->append("Response:"+QString::fromStdString(kb.searchKnowledgeBase(prompt.toStdString(),1)[0].response));
 
 }
 
-
-void MainWindow::on_btn_groqTest_clicked()
+void MainWindow::loadSelectedVideo(QListWidgetItem *item)
 {
-    auto *manager = new QNetworkAccessManager(this);
+    QString filename = item->text();
 
-    QUrl url("https://api.groq.com/openai/v1/chat/completions");
-    QNetworkRequest request(url);
+    QString path =
+        QCoreApplication::applicationDirPath()
+        + "/videos/" + filename;
 
-    request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
-    request.setRawHeader("Accept", "application/json");
-
-    QByteArray authHeader = "Bearer " + apiKey.toUtf8();
-    request.setRawHeader("Authorization", authHeader);
-
-    QJsonObject message;
-    message["role"] = "user";
-    message["content"] = "Hallo, wie gehts wie stehts?!";
-
-    QJsonArray messages;
-    messages.append(message);
-
-    QJsonObject payload;
-    payload["model"] = "llama-3.3-70b-versatile";
-    payload["messages"] = messages;
-
-    QNetworkReply *reply = manager->post(
-        request,
-        QJsonDocument(payload).toJson()
-        );
-
-    connect(reply, &QNetworkReply::finished, this, [reply, this]()
-            {
-                QByteArray data = reply->readAll();
-
-                qDebug() << "RAW RESPONSE:" << data;
-
-                if (reply->error() != QNetworkReply::NoError)
-                {
-                    auto *msg = new QMessageBox(this);
-                    msg->setAttribute(Qt::WA_DeleteOnClose);
-                    msg->setWindowTitle("Network Error");
-                    msg->setText(reply->errorString() + "\n\n" + QString(data));
-                    msg->show();
-
-                    reply->deleteLater();
-                    return;
-                }
-
-                QJsonParseError jsonError;
-                QJsonDocument doc = QJsonDocument::fromJson(data, &jsonError);
-
-                if (jsonError.error != QJsonParseError::NoError)
-                {
-                    auto *msg = new QMessageBox(this);
-                    msg->setAttribute(Qt::WA_DeleteOnClose);
-                    msg->setWindowTitle("JSON Parse Error");
-                    msg->setText(jsonError.errorString() + "\n\nRaw:\n" + QString(data));
-                    msg->show();
-
-                    reply->deleteLater();
-                    return;
-                }
-
-                QJsonObject root = doc.object();
-                QJsonArray choices = root["choices"].toArray();
-
-                if (choices.isEmpty())
-                {
-                    auto *msg = new QMessageBox(this);
-                    msg->setAttribute(Qt::WA_DeleteOnClose);
-                    msg->setWindowTitle("API Error");
-                    msg->setText("No response choices found:\n" + QString(data));
-                    msg->show();
-
-                    reply->deleteLater();
-                    return;
-                }
-
-                QString answer =
-                    choices.first().toObject()
-                        ["message"].toObject()
-                                ["content"].toString();
-
-                auto *msg = new QMessageBox(this);
-                msg->setAttribute(Qt::WA_DeleteOnClose);
-                msg->setWindowTitle("Groq Antwort");
-                msg->setText(answer);
-                msg->show();
-
-                reply->deleteLater();
-            });
+    player->setSource(QUrl::fromLocalFile(path));
+    player->play();
 }
 

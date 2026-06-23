@@ -13,6 +13,8 @@
 #include <QJsonObject>
 #include <QJsonArray>
 #include <QMessageBox>
+#include <QListWidgetItem>
+#include "knowledgebase.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -29,11 +31,15 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_btn_playVideo_clicked();
-
-    void on_btn_groqTest_clicked();
+    void loadSelectedVideo(QListWidgetItem *item);
+    void sendMessage();
 
 private:
     Ui::MainWindow *ui;
+    QMediaPlayer* player;
+    QAudioOutput* audioOutput;
+    QVideoWidget* videoWidget;
+    KnowledgeBase kb;
+
 };
 #endif // MAINWINDOW_H

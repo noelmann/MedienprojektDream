@@ -11,35 +11,125 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>DreamExplainer</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="btn_playVideo">
-    <property name="geometry">
-     <rect>
-      <x>220</x>
-      <y>200</y>
-      <width>75</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>playVideo</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btn_groqTest">
-    <property name="geometry">
-     <rect>
-      <x>460</x>
-      <y>180</y>
-      <width>75</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>groqTest</string>
-    </property>
-   </widget>
+   <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,3,2">
+    <item>
+     <widget class="QWidget" name="videoPanel" native="true">
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QLabel" name="videoPanelLabel">
+         <property name="text">
+          <string>Videolist</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QListWidget" name="videoListWidget"/>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QWidget" name="videoPlayerPanel" native="true">
+      <layout class="QVBoxLayout" name="verticalLayout_2" stretch="0,9,0,1">
+       <item>
+        <widget class="QLabel" name="videoPlayerPanelLabel">
+         <property name="text">
+          <string>
+DREAM - Dezentrale Datenräume für mehr
+ Sicherheit und Souveränität bei der Cloud-Nutzung </string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QWidget" name="videoWidgetContainer" native="true"/>
+       </item>
+       <item>
+        <widget class="QSlider" name="timelineSlider">
+         <property name="orientation">
+          <enum>Qt::Orientation::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QWidget" name="controlsWidget" native="true">
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <widget class="QPushButton" name="playButton">
+            <property name="text">
+             <string>Play</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pauseButton">
+            <property name="text">
+             <string>Pause</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="stopButton">
+            <property name="text">
+             <string>Stop</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer">
+            <property name="orientation">
+             <enum>Qt::Orientation::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QSlider" name="volumeSlider">
+            <property name="orientation">
+             <enum>Qt::Orientation::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QWidget" name="chatPanel" native="true">
+      <layout class="QVBoxLayout" name="verticalLayout_3" stretch="0,8,2,0">
+       <item>
+        <widget class="QLabel" name="chatPanelLabel">
+         <property name="text">
+          <string>LLM-Helper</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QTextBrowser" name="chatHistory"/>
+       </item>
+       <item>
+        <widget class="QTextEdit" name="chatInput"/>
+       </item>
+       <item>
+        <widget class="QPushButton" name="sendButton">
+         <property name="text">
+          <string>PushButton</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
