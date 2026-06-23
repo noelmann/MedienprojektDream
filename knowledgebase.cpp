@@ -12,14 +12,12 @@
 #include <cctype>
 #include <QString>
 #include <locale>
+#include <QFile>
+#include <QDebug>
 
 using namespace std;
 
-vector<string> sentences;
-unordered_map<string,array<double,300>> sentences_embeddings;
-unordered_map<string, array<double,300>> embeddings;
-const string embeddingsPath = R"(D:\germanWordEmbeddings\chunk_aa)";
-const string sentencesPath = R"(D:\germanWordEmbeddings\RAG-Knowledge.txt)";
+
 
 
 KnowledgeBase::KnowledgeBase()
@@ -34,6 +32,20 @@ KnowledgeBase::KnowledgeBase()
 
         testResponseRanking();
 
+}
+
+string KnowledgeBase::removePunctuation(string &s)
+{
+    string temp = "";
+    for(int i =0;i<s.length();i++)
+    {
+        if(!ispunct(s[i]))
+        {
+            temp+=s[i];
+        }
+    }
+
+    return temp;
 }
 
 void KnowledgeBase::printSentenceEmbeddings()
@@ -53,13 +65,14 @@ void KnowledgeBase::printSentenceEmbeddings()
 void KnowledgeBase::testResponseRanking()
 {
     vector<responseScorePair> rps;
-    string line = "Was ist das Projekt überhaupt?";
+    string line = "Was ist das Projekt überhaupt und wie hilft es den kleinen und mittelständischen Unternehmen?";
+    line = removePunctuation(line);
     cout << "Please enter sentence for responseRetrieval:" << line << endl;
 
     QString q = QString::fromUtf8(line.c_str()).toLower();
     line = q.toUtf8().toStdString();
 
-    rps = searchKnowledgeBase(line,50);
+    rps = searchKnowledgeBase(line,25);
     for(const auto &rp : rps)
     {
         cout<< rp.response + "| Score:" + to_string(rp.score)<<endl;
@@ -297,7 +310,7 @@ KnowledgeBase::loadWordEmbeddings(const string& path)
             vec[i] = strtod(p, (char**)&p);
         }
 
-        embeddings.emplace(std::move(word), std::move(vec));
+        embeddings.emplace(move(word), move(vec));
         ++c;
     }
 
@@ -310,21 +323,26 @@ KnowledgeBase::loadWordEmbeddings(const string& path)
 
 vector<string> KnowledgeBase::loadSentences(const string &path)
 {
-    ifstream file(path);
+    QFile file(QString::fromStdString(path));
     vector<string> sentences;
-    string sentence;
 
-    while(getline(file,sentence))
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
     {
-        QString q = QString::fromUtf8(sentence.c_str());
-        q = q.toLower();
-
-        sentence = q.toUtf8().toStdString();
-        sentences.emplace_back(std::move(sentence));
+        qWarning() << "Failed to open resource:" << path;
+        return sentences;
     }
 
+    while (!file.atEnd())
+    {
+        QByteArray line = file.readLine();
 
-    file.close();
+        QString q = QString::fromUtf8(line).trimmed().toLower();
+
+        string sentence = q.toUtf8().toStdString();
+        sentence = removePunctuation(sentence);
+
+        sentences.emplace_back(move(sentence));
+    }
 
     return sentences;
 }

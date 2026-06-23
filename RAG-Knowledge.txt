@@ -1,0 +1,275 @@
+Wenn ich über dieses Thema nachdenke, frage ich mich zuerst: Wem gehören meine Daten eigentlich, und wer darf entscheiden, was damit passiert?
+Genau darum geht es hier.
+Jeder Mensch soll selbst bestimmen können, wer seine Daten sehen darf, wofür sie benutzt werden und wie lange sie gespeichert bleiben.
+Um den Unterschied zu verstehen, schaue ich mir zwei Möglichkeiten an, wie man Daten speichern kann.
+Bei der ersten Möglichkeit liegen alle Daten an einem einzigen Ort, zum Beispiel bei einer großen Firma.
+Diese Firma speichert alles, verwaltet alles und entscheidet, wer Zugriff bekommt.
+Das Problem daran ist, dass diese eine Stelle sehr viel Macht hat.
+Ich muss ihr einfach vertrauen und kann nur schwer überprüfen, was wirklich mit meinen Daten passiert.
+Und wenn bei dieser Stelle etwas schiefgeht oder jemand sie angreift, sind plötzlich die Daten von ganz vielen Menschen auf einmal in Gefahr.
+Bei der zweiten Möglichkeit, also den verteilten Systemen, ist das anders.
+Hier liegen die Daten nicht alle an einem Ort, sondern sind auf viele Stellen verteilt.
+Am besten bleiben sie sogar direkt bei der Person, um die es geht.
+Und genau das ist der Grund, warum man so besser über seine eigenen Daten bestimmen kann.
+Der erste Grund ist, dass keine einzelne Stelle mehr die ganze Macht über die Daten hat.
+Die Daten bleiben bei mir und nicht bei irgendeiner Firma.
+Ich bin also nicht mehr davon abhängig, dass diese eine Firma fair mit meinen Daten umgeht.
+Der zweite Grund ist, dass ich selbst entscheide, wer was zu sehen bekommt.
+Ich gebe nur das weiter, was wirklich nötig ist.
+Ein einfaches Beispiel: Wenn ich irgendwo zeigen muss, dass ich alt genug bin, dann reicht es zu sagen „Ja, ich bin alt genug“.
+Ich muss aber nicht mein ganzes Geburtsdatum verraten.
+Ich teile also nur das Nötigste und behalte den Rest für mich.
+Der dritte Grund ist, dass ich besser nachvollziehen kann, was mit meinen Daten passiert.
+Ich kann sehen, wer wann auf meine Daten zugegriffen hat.
+So muss ich nicht einfach blind vertrauen, sondern kann es selbst überprüfen.
+Der vierte Grund ist, dass ich nicht an eine einzige Firma gebunden bin.
+Bei einer großen Firma ist es oft schwer, wieder wegzukommen, ohne seine Daten zu verlieren.
+Bei verteilten Systemen kann ich meine Daten leichter mitnehmen und bin freier in meiner Entscheidung.
+Ein gutes Beispiel ist der Umgang mit Gesundheitsdaten.
+Wenn alle Krankendaten bei einer einzigen Firma liegen, muss ich dieser Firma komplett vertrauen.
+Bei einem verteilten System bleibt die Kontrolle dagegen bei mir als Patient.
+Ich gebe dann zum Beispiel nur eine bestimmte Information gezielt an genau die eine Praxis weiter, die sie wirklich braucht.
+Natürlich ist nicht alles automatisch perfekt.
+Auch verteilte Systeme haben ihre Schwierigkeiten.
+Zum Beispiel trage ich selbst mehr Verantwortung.
+Wenn ich mein Passwort oder meinen Zugang verliere, komme ich vielleicht selbst nicht mehr an meine Daten heran.
+Außerdem ist so ein System oft etwas komplizierter zu bedienen.
+Trotzdem überwiegt für mich der Vorteil, dass ich mehr Kontrolle habe.
+Zum Schluss möchte ich es kurz zusammenfassen.
+Verteilte Systeme sorgen dafür, dass ich besser über meine eigenen Daten bestimmen kann, weil die Kontrolle wieder bei mir liegt und nicht bei einer einzigen großen Stelle.
+Ich entscheide selbst, wer meine Daten sehen darf, ich gebe nur das Nötigste weiter, und ich kann nachvollziehen, was damit passiert.
+Genau deshalb passen verteilte Systeme viel besser zu dem Gedanken, dass jeder Mensch Herr über seine eigenen Daten sein sollte.
+Viele Unternehmen setzen heute auf vernetzte Systeme — aber nicht jedes ist gleich aufgebaut.
+Verteilte und dezentrale Systeme klingen ähnlich, funktionieren aber ganz unterschiedlich.
+Und das hat direkte Folgen für eine Frage, die immer mehr Unternehmen beschäftigt:
+„Verteilt oder dezentral — was passt zu Ihrem Unternehmen?“
+Wer kontrolliert unsere Daten?
+Wo werden sie gespeichert?
+Und wie abhängig sind wir von großen Cloud-Anbietern?
+In den nächsten 5 Minuten zeigen wir Ihnen die wichtigsten Unterschiede — verständlich und praxisnah.
+Ein verteiltes System besteht aus mehreren Rechnern oder Servern, die über ein Netzwerk verbunden sind und für den Nutzer wie ein einziges System wirken.
+Es gibt oft eine zentrale Steuerung oder Koordination — zum Beispiel einen Server oder Master-Knoten — der die Aufgaben verteilt und den Überblick behält.
+Typische Beispiele sind Cloud-Plattformen, Microservices oder verteilte Datenbanken.
+Der große Vorteil: solche Systeme sind leistungsfähig, skalierbar und effizient — ideal für die meisten Unternehmensanwendungen.
+Ein dezentrales System hat keine zentrale Instanz.
+Alle Knoten sind gleichberechtigt und kommunizieren miteinander.
+Entscheidungen werden gemeinsam getroffen — meist durch Konsensprotokolle oder offene Regeln.
+Beispiele sind Blockchain, Peer-to-Peer-Netzwerke oder föderierte Dienste.
+Der wichtigste Unterschied zur verteilten Architektur: Die Kontrolle wird nicht zentral gebündelt, sondern auf viele gleichberechtigte Teilnehmer verteilt.
+Der größte Unterschied liegt in der Architektur — also darin, wer im System das Sagen hat.
+Verteilte Systeme arbeiten häufig hierarchisch.
+Es gibt koordinierende Instanzen, die Prozesse steuern und Entscheidungen treffen.
+Dezentrale Systeme verteilen diese Kontrolle auf viele gleichberechtigte Teilnehmer.
+Kein einzelner Knoten besitzt die vollständige Kontrolle.
+Das hat direkte Auswirkungen auf die Ausfallsicherheit.
+In einem verteilten System mit zentralem Server entsteht ein sogenannter Single Point of Failure: Fällt dieser eine Server aus, bricht das gesamte System zusammen.
+In dezentralen Systemen gibt es diesen einzelnen Schwachpunkt nicht.
+Fällt ein Knoten aus, kommunizieren die anderen weiter — das Netzwerk bleibt funktionsfähig.
+Auch die Kommunikation unterscheidet sich deutlich — und das hat praktische Konsequenzen für Geschwindigkeit und Zuverlässigkeit.
+Verteilte Systeme arbeiten häufig mit gezielter, koordinierter Kommunikation.
+Eine Nachricht geht direkt von A nach B.
+Für kritische Prozesse kommen zusätzlich synchronisierte Protokolle zum Einsatz — zum Beispiel der Two-Phase-Commit, der sicherstellt, dass alle Beteiligten eine Änderung gleichzeitig bestätigen.
+Dezentrale Systeme funktionieren nach einem anderen Prinzip.
+Informationen werden schrittweise zwischen Teilnehmern weitergegeben — ähnlich wie ein Gerücht, das sich durch ein Netzwerk verbreitet.
+Man nennt das Gossip-Protokoll oder Flooding.
+Der Vorteil: Selbst wenn einzelne Knoten ausfallen, erreicht die Nachricht ihr Ziel über alternative Wege.
+Der Nachteil: Das macht dezentrale Netzwerke technisch komplexer und manchmal langsamer.
+Ein weiterer wichtiger Unterschied liegt darin, wie Daten gespeichert und verwaltet werden.
+In verteilten Systemen werden Daten oft partitioniert oder repliziert.
+Das bedeutet: Datenmengen werden auf verschiedene Knoten verteilt, um Skalierung zu ermöglichen, oder auf mehrere Knoten kopiert, um Ausfallsicherheit zu gewährleisten.
+Dezentrale Systeme führen dagegen oft eine gemeinsame Datenstruktur — zum Beispiel ein verteiltes Ledger wie bei der Blockchain.
+Die Integrität der Daten wird durch kryptografischen Konsens gesichert.
+Dadurch besitzt kein einzelner Anbieter vollständige Kontrolle über alle Daten — was die digitale Selbstbestimmung der Nutzer stärkt.
+Bei verteilten und dezentralen Systemen spielt das sogenannte CAP-Theorem eine wichtige Rolle.
+Es beschreibt drei Eigenschaften: Konsistenz, Verfügbarkeit und Partitionstoleranz.
+Ein System kann nie alle drei Eigenschaften gleichzeitig perfekt erfüllen — man muss immer abwägen.
+Verteilte Systeme wählen je nach Anwendung zwischen diesen Eigenschaften.
+Dezentrale Systeme wie Blockchain setzen meist auf Konsistenz durch Konsens — nehmen dafür aber höhere Latenzen in Kauf.
+Beide Ansätze besitzen klare Vorteile und Nachteile.
+Verteilte Systeme bieten hohe Performance, gute Skalierbarkeit und einfache zentrale Verwaltung.
+Sie eignen sich besonders für klassische Unternehmensanwendungen mit vertrauenswürdigen Betreibern und hohem Durchsatz.
+Dezentrale Systeme sind extrem widerstandsfähig gegen zentrale Angriffe und Zensur, benötigen aber mehr Ressourcen und komplexe Kryptografie- und Konsens-Mechanismen.
+In der Praxis entstehen deshalb immer häufiger hybride Lösungen — die Vorteile beider Ansätze werden kombiniert.
+Die Wahl hängt letztlich vom Anwendungsfall ab.
+Für Anwendungen mit vertrauenswürdigen Betreibern und hohem Durchsatz sind verteilte Systeme meist die bessere Wahl — etwa für Cloud-Plattformen, Microservices oder Unternehmensdatenbanken.
+Wenn jedoch Unabhängigkeit von zentraler Kontrolle, Zensurresistenz oder offene, vertrauensarme Umgebungen gefragt sind, liefern dezentrale Systeme klare Vorteile — etwa bei Blockchain-Anwendungen oder sicheren P2P-Netzwerken.
+In der Praxis ist oft ein hybrider Ansatz sinnvoll: eine souveräne Unternehmens-Cloud als Basis, ergänzt durch dezentrale Technologien dort, wo besonders sensible Daten geschützt werden müssen.
+Analysieren Sie Ihren Anwendungsfall — und wählen Sie die Architektur, die zu Ihren Anforderungen passt.
+Viele Unternehmen speichern ihre Daten heute bei internationalen Cloud-Anbietern. Das ist praktisch, schnell — und birgt gleichzeitig Risiken, über die man sprechen sollte.
+Denn je stärker Geschäftsprozesse an einen bestimmten Cloud-Dienst angepasst werden, desto schwieriger wird später ein Wechsel.
+Datenformate, Schnittstellen, Sicherheitsmechanismen — all das unterscheidet sich zwischen Anbietern.
+Es entsteht eine technische Abhängigkeit: der sogenannte Vendor Lock-in.
+Hinzu kommt: Für viele Nutzer ist kaum nachvollziehbar, wo ihre Daten wirklich gespeichert werden, wer darauf zugreifen kann und wie sie intern verarbeitet werden.
+Datensouveränität bedeutet: Unternehmen sollen selbst bestimmen können,
+wo Daten gespeichert werden,
+wer Zugriff erhält,
+wie Daten genutzt werden.
+Das Ziel dieses Videos: ein klares Verständnis, welche Ansätze es dafür gibt — und was davon für KMU sinnvoll ist.
+Ein erster wichtiger Ansatz sind föderierte Datenräume — zum Beispiel nach dem Modell von Gaia-X oder den International Data Spaces.
+Dabei handelt es sich nicht um eine zentrale Plattform, sondern um ein Netzwerk aus Organisationen, Diensten und Datenquellen.
+Daten bleiben grundsätzlich beim jeweiligen Unternehmen.
+Freigegeben wird nur das, was über technische und organisatorische Regeln erlaubt ist.
+Für KMU ist das besonders relevant: Daten können mit Partnern, Lieferanten oder Kunden geteilt werden, ohne die Kontrolle vollständig an eine Plattform abzugeben.
+Ergänzend dazu gibt es sogenannte Connectoren — Software-Gateways, die bestehende IT-Systeme an einen Datenraum anbinden und den kontrollierten Datenaustausch ermöglichen.
+Die wichtigste Botschaft: Die Unternehmen behalten die Kontrolle über ihre Daten, können aber trotzdem digital zusammenarbeiten.
+Ein zweiter Ansatz: souveräne Unternehmens-Clouds — also Cloud-Lösungen, die selbst betrieben oder bei europäischen Anbietern gehostet werden.
+Statt vollständig von großen internationalen Plattformen abhängig zu sein, können Unternehmen auf Open-Source-Lösungen wie Nextcloud zurückgreifen oder europäische Anbieter wählen, die dem europäischen Datenschutzniveau entsprechen.
+Die Souveränität entsteht dabei durch mehrere Faktoren:
+Kontrolle über den Datenstandort,
+Verschlüsselung der gespeicherten Inhalte,
+offene Schnittstellen für einfachen Export und Anbieterwechsel,
+weniger Vendor Lock-in durch standardisierte Protokolle.
+Für KMU ist das oft der praktischste Einstieg: Dateien, Kalender, Chat, Office-Funktionen und Backups bleiben nutzbar — aber unter eigener Kontrolle.
+Ein modernerer Ansatz geht noch weiter: Solid Pods und Self-Sovereign Identity.
+Solid trennt Daten konsequent von Anwendungen.
+Statt dass Apps Daten dauerhaft bei sich speichern, liegen die Daten in sogenannten Pods — persönlichen oder unternehmensbezogenen Online-Datenspeichern.
+Apps erhalten nur gezielte, widerrufliche Zugriffsberechtigungen.
+Das bedeutet: Ein Unternehmen kann einer Anwendung heute Zugriff gewähren — und diesen morgen wieder entziehen.
+Die Daten bleiben dabei stets unter eigener Kontrolle.
+Ergänzend dazu kommt Self-Sovereign Identity — kurz SSI.
+Dabei werden digitale Identitäten und Nachweise in einer digitalen Wallet gespeichert und gezielt freigegeben: Unternehmensidentität, Zertifikate, Rollen oder Compliance-Nachweise.
+Statt bei jedem Dienst neue Konten und Datenkopien anzulegen, werden vertrauenswürdige Nachweise gezielt vorgezeigt — ohne überflüssige Datenweitergabe.
+Ein weiterer Ansatz betrifft die Frage: Müssen Daten überhaupt immer in die Cloud?
+Bei Edge-Ansätzen werden Daten möglichst nah an ihrer Entstehung verarbeitet — auf Maschinen, lokalen Servern oder Gateways.
+Nur ausgewählte Ergebnisse, Metadaten oder freigegebene Ausschnitte gehen in die Cloud.
+Das reduziert Angriffsflächen, Bandbreitenbedarf und unkontrollierte Datenkopien.
+Peer-to-Peer-nahe Konzepte gehen noch weiter: Systeme kommunizieren direkter miteinander, ohne alles über einen zentralen Anbieter zu leiten.
+Es entsteht ein dezentrales Netzwerk, in dem jeder Teilnehmer gleichberechtigt ist.
+Für KMU ist das besonders bei Produktionsdaten, IoT-Geräten und sensiblen Kundendaten relevant — also überall dort, wo Daten möglichst gar nicht erst das eigene Netzwerk verlassen sollten.
+Welcher Ansatz passt also zu Ihrem Unternehmen?
+Für die meisten KMU ist ein hybrider Ansatz der sinnvollste Einstieg:
+Eine souveräne Unternehmens-Cloud bildet die alltagstaugliche Basis.
+Datenraum-Technologien wie Gaia-X oder IDS ermöglichen kontrollierten B2B-Datenaustausch.
+Solid Pods und SSI ergänzen dort, wo besonders sensible Identitäten und Zugriffsrechte souverän verwaltet werden müssen.
+Edge-Ansätze helfen bei Produktionsdaten und IoT.
+Datensouveränität bedeutet nicht weniger Digitalisierung — sondern mehr Kontrolle über die eigene digitale Infrastruktur.
+Stellen Sie sich vor: Ihr Unternehmen arbeitet täglich mit Cloud-Diensten. Dateien werden online geteilt, Daten von verschiedenen Standorten abgerufen, Prozesse über digitale Plattformen gesteuert.
+Das klingt modern und effizient. Und das ist es auch.
+Doch dahinter verbirgt sich eine Frage, die immer mehr Unternehmen beschäftigt: Wer kontrolliert eigentlich unsere Daten?
+Denn die meisten Cloud-Systeme werden heute von wenigen großen internationalen Anbietern betrieben.
+Daten fließen auf fremde Server, in fremde Rechtskreise — und Unternehmen verlieren schrittweise die Kontrolle darüber, was mit ihren Informationen geschieht.
+Das bringt konkrete Probleme mit sich:
+Fehlende Transparenz: Wo liegen meine Daten wirklich?
+Abhängigkeit von Plattformen — technisch und vertraglich
+Datenschutzrisiken, gerade im Hinblick auf die DSGVO
+Schwieriger Anbieterwechsel durch sogenannten Vendor Lock-in
+Genau deshalb gewinnt das Thema Datensouveränität für Unternehmen in Europa immer mehr an Bedeutung.
+Genau mit diesen Fragen beschäftigt sich das Forschungsprojekt DREAM.
+DREAM steht für: „Dezentrale Datenräume für mehr Sicherheit und Souveränität bei der Cloud-Nutzung“.
+Das Projekt wird vom deutschen Bundesministerium für Forschung, Technologie und Raumfahrt gefördert und läuft über drei Jahre bis 2028.
+Ziel ist es, neue dezentrale Cloud-Technologien zu entwickeln — speziell für kleine und mittelständische Unternehmen.
+An DREAM arbeiten vier Partner zusammen, die Forschung und Praxis direkt verbinden:
+TH Köln — entwickelt technische Bausteine für dezentrale Infrastrukturen
+JLU Gießen — forscht an sicheren digitalen Identitäten und Sicherheitsmechanismen
+luckycloud — deutscher Cloud-Anbieter, testet Konzepte in realen Umgebungen
+HK Business Solutions — Projektkoordination und Praxistransfer in Unternehmen
+Gemeinsam verfolgen diese Partner ein Ziel: Unternehmen sollen Cloud-Technologien nutzen können, ohne die Kontrolle über ihre eigenen Daten zu verlieren.
+Aber was bedeutet „dezentral“ konkret? Und wie hilft das Unternehmen im Alltag?
+In klassischen Cloud-Systemen liegen alle Daten bei einem einzigen Anbieter.
+Dieser kontrolliert die Server, die Zugriffsrechte und häufig auch die Schnittstellen.
+Für Unternehmen entsteht so eine starke Abhängigkeit.
+DREAM verfolgt einen anderen Ansatz: Daten werden nicht vollständig an einem Ort gesammelt, sondern bleiben dort, wo sie entstehen — auf eigenen Servern, bei ausgewählten Cloud-Anbietern oder in lokalen Systemen.
+DREAM beschreibt das als „virtuelle Integration physisch verteilter Daten“.
+Das bedeutet: Die Daten bleiben verteilt gespeichert, können aber trotzdem gemeinsam genutzt werden — verbunden durch gemeinsame Kommunikations- und Sicherheitsmechanismen.
+Das bringt konkrete Vorteile:
+Mehr Kontrolle: Unternehmen entscheiden selbst, wo Daten liegen
+Weniger Abhängigkeit: kein Vendor Lock-in bei einzelnen Anbietern
+Höhere Sicherheit: kein einzelner zentraler Angriffspunkt
+Flexiblere Cloud-Nutzung: verschiedene Anbieter können kombiniert werden
+Damit dezentrale Systeme funktionieren, braucht es robuste Sicherheitsmechanismen.
+Denn wenn Daten über mehrere Systeme verteilt sind, muss jeder Zugriff genau kontrolliert werden.
+DREAM setzt dabei auf kryptografische Verfahren.
+Daten werden verschlüsselt — so, dass sie selbst dann geschützt bleiben, wenn sie über verschiedene Systeme hinweg übertragen werden.
+Ein weiterer Schwerpunkt sind digitale Identitäten.
+DREAM untersucht Verfahren, mit denen Nutzer und Unternehmen ihre Zugriffsrechte selbst kontrollieren können — ohne dauerhaft auf zentrale Plattformbetreiber angewiesen zu sein.
+Konkret bedeutet das: Unternehmen können selbst bestimmen,
+wer auf welche Daten zugreifen darf,
+welche Informationen für Partner sichtbar sind,
+wie lange Zugriffsrechte gelten,
+und unter welchen Bedingungen Daten genutzt werden dürfen.
+So entsteht eine feingranulare, transparente Kontrolle über die eigene Datennutzung.
+Sie fragen sich vielleicht: Klingt das alles sehr technisch — was bringt mir das konkret als Unternehmen?
+DREAM entwickelt Lösungen, die nicht nur sicher, sondern auch im Alltag nutzbar sein sollen.
+Besonders kleine und mittelständische Unternehmen stehen dabei im Mittelpunkt — also Unternehmen, die keine großen IT-Abteilungen haben und trotzdem modern und datensouverän arbeiten möchten.
+Die entwickelten Technologien sollen es ermöglichen:
+Sicher mit Partnern, Lieferanten und Kunden zusammenzuarbeiten
+Verschiedene Cloud-Systeme miteinander zu verbinden — ohne Kontrollverlust
+Zugriffsrechte einfach zu verwalten, ohne IT-Spezialistenwissen
+Daten gemäß DSGVO und europäischem Datenschutzniveau zu speichern
+DREAM forscht dabei nicht nur auf theoretischer Ebene.
+Die entwickelten Konzepte werden in sogenannten Demonstratoren praktisch getestet — also konkreten Beispielsystemen, die zeigen, wie dezentrale Datenräume im realen Einsatz funktionieren.
+Unternehmen sollen später auf Demonstratoren, Leitfäden und Werkzeuge zugreifen können, die den Einstieg in souveräne Cloud-Technologien erleichtern.
+DREAM zeigt, wie zukünftige Cloud-Infrastrukturen aussehen könnten: nicht vollständig zentral organisiert, sondern verteilt, vernetzt — und stärker unter der Kontrolle der Nutzer selbst.
+Die Idee dahinter ist nicht, große Cloud-Anbieter vollständig zu ersetzen.
+Stattdessen soll eine Infrastruktur entstehen, die flexibler, transparenter und kontrollierbarer ist.
+Daten sollen dort gespeichert werden, wo es sinnvoll ist — während die Kontrolle bei den eigentlichen Eigentümern der Daten bleibt.
+Digitale Technologien sollen Unternehmen unterstützen, ohne dass diese die Kontrolle über ihre eigenen Daten verlieren.
+Das ist das Ziel von DREAM.
+Und es ist die Zukunft europäischer digitaler Souveränität.
+Verteiltes System – Ein vernetztes Computersystem, in dem Prozesse und Ressourcen ausreichend/hinreichend auf mehrere Computer verteilt sind.
+Verteiltes System – Das World Wide Web (WWW) wirkt für Nutzer wie ein einzelnes System, obwohl Inhalte im Hintergrund von vielen Servern und CDNs geladen werden.
+Dezentrales System – Ein vernetztes Computersystem, in dem Prozesse und Ressourcen auf mehrere Computer verteilt sind und keine zentrale Steuerungsinstanz existiert.
+Dezentrales System – Blockchain-Netzwerke wie Bitcoin speichern das Ledger auf allen Knoten ohne zentrale Instanz.
+Föderiertes System – Ein System aus autonomen Komponenten, die zur gemeinsamen Informationsverarbeitung zusammenarbeiten können.
+Föderiertes System – Das E-Mail-System (SMTP) ermöglicht den Austausch zwischen unabhängig betriebenen Servern wie Universität und Gmail.
+Hybrider Ansatz – Ein hybrider Ansatz kombiniert zentrale und dezentrale Systemelemente.
+Hybrider Ansatz – Cloud-Computing mit zentralen Rechenzentren und Edge-Computing in lokalen Systemen ist ein typisches Beispiel.
+Single Point of Failure (SPOF) – Ein einzelner kritischer Bestandteil, dessen Ausfall das gesamte System beeinträchtigt.
+Single Point of Failure (SPOF) – Ein einzelner Router kann bei Ausfall den gesamten Netzwerkverkehr lahmlegen.
+Vendor Lock-in – Vendor Lock-in beschreibt eine starke Abhängigkeit von einem Anbieter, die einen Wechsel erschwert.
+Vendor Lock-in – Ein Unternehmen kann Daten nur mit großem Aufwand von einem Cloud-Anbieter zu einem anderen migrieren.
+Datenraum (föderiert) – Ein föderierter Datenraum ist eine sichere Infrastruktur für kontrollierten Datenaustausch auf Basis gemeinsamer Regeln.
+Datenraum (föderiert) – Ein Unternehmen stellt Audit-Dokumente in einem Datenraum bereit, sodass Prüfer kontrollierten Zugriff erhalten.
+Datenraum (zentralisiert) – Ein zentralisierter Datenraum ist ein geschützter Bereich, in dem Daten über eine zentrale Plattform verwaltet werden.
+Datenraum (zentralisiert) – Bei einer Unternehmensübernahme werden Dokumente in einem virtuellen Data Room für Käufer bereitgestellt.
+Datenhoheit – Datenhoheit bezeichnet das Recht, über eigene Daten selbst zu bestimmen.
+Datenhoheit – Ein Patient entscheidet, welche Ärzte Zugriff auf seine Gesundheitsdaten erhalten.
+Datensouveränität – Datensouveränität ist die praktische Fähigkeit, Daten selbstbestimmt zu kontrollieren und zu nutzen.
+Datensouveränität – Ein Patient kann nachvollziehen, wer auf seine Daten zugreift und wie sie verwendet werden.
+Schlüsselmanagement – Schlüsselmanagement umfasst die Erzeugung, Speicherung und Verwaltung kryptografischer Schlüssel.
+Schlüsselmanagement – Eine Messenger-App nutzt Schlüssel, um Nachrichten zwischen Sender und Empfänger zu verschlüsseln.
+Kommunikationsmodelle/-dienste – Kommunikationsmodelle beschreiben den Informationsaustausch zwischen Sender und Empfänger, Kommunikationsdienste setzen diese technisch um.
+Kommunikationsmodelle/-dienste – TCP ermöglicht eine zuverlässige Datenübertragung zwischen Systemen.
+Strombasierter Dienst – Ein strombasierter Dienst verarbeitet kontinuierliche Datenströme in Echtzeit.
+Strombasierter Dienst – Streaming-Systeme verarbeiten Nutzeraktionen wie Play- und Skip-Events parallel in Echtzeit.
+Dateibasierter Dienst – Ein dateibasierter Dienst nutzt Dateien als zentrales Medium zur Datenübertragung.
+Dateibasierter Dienst – In Cloud-Ordnern werden Dateien hochgeladen und von anderen Nutzern synchron verarbeitet.
+Kommunikationsbasierter Dienst – Ein kommunikationsbasierter Dienst nutzt direkte Kommunikationskanäle zum Informationsaustausch.
+Kommunikationsbasierter Dienst – WhatsApp oder Microsoft Teams ermöglichen den Austausch von Nachrichten in Echtzeit.
+Usable Security – Usable Security gestaltet Sicherheitssysteme so, dass sie einfach verständlich und nutzbar sind.
+Usable Security – Sicherheitsupdates laufen automatisch im Hintergrund ohne Nutzerinteraktion.
+Usable Privacy – Usable Privacy beschreibt nutzerfreundliche Gestaltung von Datenschutzfunktionen.
+Usable Privacy – Nutzer können in einer App einfach einstellen, wer ihre Profilinformationen sehen darf.
+Cybersicherheit, Datenschutz und digitale Souveränität stellen insbesondere Kleinunternehmen und ehrenamtliche Organisationen vor großen Herausforderungen.
+Obwohl Cloud-Anwendungen zahlreiche Vorteile wie verbesserte Zusammenarbeit, Skalierbarkeit und Flexibilität bieten, werden sie in Deutschland vergleichsweise selten genutzt.
+Gründe hierfür sind unter anderem Sorgen hinsichtlich des Datenschutzes, mangelnder Kontrolle über eigene Daten sowie begrenzte personelle und finanzielle Ressourcen für IT-Sicherheit.
+Gleichzeitig sind viele dieser Organisationen besonders schutzbedürftig, aufgrund regulatorischer Anforderungen.
+Das Forschungsprojekt DREAM untersucht, wie dezentrale Cloud-Architekturen dazu beitragen können, Sicherheit, Datenschutz und Datensouveränität in der Cloud zu erhöhen, ohne die Praxistauglichkeit einzuschränken.
+Ziel ist die Entwicklung und wissenschaftliche Evaluation benutzerfreundlicher Informations- und Kommunikationslösungen, die einen flexiblen und souveränen Einsatz von Cloud-Diensten ermöglichen.
+Hierzu wird eine technisch-organisatorische Zwischenschicht erforscht, die den Wechsel zwischen Cloud-Anbietern erleichtert, Abhängigkeiten reduziert und den Betrieb dezentraler Dienste vereinfacht.
+Ein besonderer Fokus liegt dabei auf nutzbaren Sicherheits- und Datenschutzmechanismen („Usable Security & Privacy“), um Akzeptanzhürden abzubauen und den sicheren Einsatz moderner Cloud-Lösungen zu fördern.
+Cloudanwendungen eröffnen Unternehmen neue Potenziale für Zusammenarbeit und Flexibilität, bringen jedoch gerade für kleine und mittelständische Betriebe Herausforderungen bei Cybersicherheit, Datenschutz und Anbieterabhängigkeit mit sich.
+Daher ist es für Unternehmen entscheidend, Strategien zur Stärkung ihrer digitalen Souveränität zu entwickeln, um Cloud-Technologien sicher und rechtskonform einzusetzen und ihre IT-Infrastruktur zukunftssicher auszurichten.
+Im Projekt „DREAM“ verfolgen die Forschenden das Ziel, innovative Lösungen für eine sichere und souveräne Nutzung dezentraler Architekturen und Technologien in der Cloud zu entwickeln.
+Grundlage ist das Konzept dezentraler Datenräume, bei dem die Daten sicher in dezentralen Infrastrukturen verschiedener Anbieter gespeichert werden können, die Kontrolle jedoch konsequent und ausschließlich beim jeweiligen Eigentümer verbleibt.
+Durch eine virtuelle Integration werden diese verteilten Datenquellen so miteinander vernetzt, dass sie für die Nutzenden wie ein zentraler Datenraum erscheinen – ohne dass eine zentrale Speicherung erforderlich ist.
+Kern des Lösungsansatzes ist die Entwicklung einer technischen Zwischenschicht, die den Betrieb und die Nutzung dezentraler Architekturen deutlich vereinfacht.
+Ziel ist es, höchste Anforderungen an Datensouveränität, Vertraulichkeit, Integrität und Verfügbarkeit zu erfüllen und gleichzeitig einen deutlich flexibleren Wechsel zwischen verschiedenen Cloudanbietern zu ermöglichen als mit herkömmlichen Lösungen.
+Die angestrebte Technologie bietet eine innovative Lösung zur effizienten Verwaltung und Speicherung von Milliarden kleiner Dateien in verteilten Datensystemen.
+Sie begegnet damit zentralen Herausforderungen wie Datenfragmentierung und komplexen Migrationsprozessen, die zunehmend auch für kleine Unternehmen mit wachsendem Datenvolumen relevant sind.
+Dadurch eröffnen sich erhebliche Marktchancen für Cloudanbieter, Hostingdienstleister und Rechenzentren, die leistungsfähige, flexible und kosteneffiziente Speicherlösungen für datenintensive Branchen wie das Gesundheitswesen und den Finanzsektor anbieten können.
+Die wachsende Verbreitung von Cloud-Technologien eröffnet Unternehmen neue Wege für Effizienz, Agilität und Zusammenarbeit.
+Gleichzeitig stehen gerade kleine und mittelständische Unternehmen (KMU) vor Herausforderungen hinsichtlich Cybersicherheit, Datenschutz und Anbieterabhängigkeit.
+Im Forschungsprojekt DREAM werden dezentrale Cloud-Ansätze entwickelt und erforscht, die sich einfach einsetzen und verwalten lassen, ohne Kompromisse bei Sicherheit, Datenschutz und Anbieterwahl.
+„Viele marktdominierende Cloud-Angebote werden heute von einigen wenigen Tech-Giganten bereitgestellt und führen Anwenderunternehmen unweigerlich in eine starke Abhängigkeit“, sagt Prof. Dr. Luigi Lo Iacono, Professor für IT-Sicherheit im Institut für Informatik der Justus-Liebig-Universität Gießen (JLU).
+„Ein Weg zur Minimierung dieser Abhängigkeit und zur Schaffung echter Souveränität bei der Cloud-Nutzung kann dezentrale Cloud-Technologie bieten, die konzeptionell ohne zentralisierte Strukturen arbeitet.
+Dezentrale Technologien gelten heute aber als kompliziert und aufwändig im Betrieb und in der Nutzung.
+Genau das wollen wir in DREAM untersuchen und angehen.“
+Das Institut für Informatik der Justus-Liebig-Universität (JLU) Gießen forscht gemeinsam mit der HK Business Solutions GmbH, der luckycloud GmbH und der Technischen Hochschule Köln (TH Köln) im Forschungsprojekt an Lösungen, die mittelständische Unternehmen dabei unterstützen, souverän und sicher Daten in der Cloud zu verarbeiten.
+Die JLU übernimmt im Projekt die Rolle eines Forschungspartners und entwickelt und erforscht maßgeblich Technologie-Bausteine für dezentrale Datenräume in der Cloud, untersucht die Nutzungs- und Anwendungsperspektive und bewertet die Ergebnisse wissenschaftlich.
+Die HK Business Solutions GmbH koordiniert das Projekt und sorgt dafür, dass die Anforderungen aus der Praxis von Beginn an einfließen.
+Die luckycloud GmbH bringt seine Erfahrung als unabhängiger Cloud-Provider ein und arbeitet daran, die technischen Konzepte des Projekts in realen Umgebungen zu integrieren, zu testen und weiterzuentwickeln.
+Die TH Köln entwickelt dateibasierte Technologie-Bausteine für den Betrieb dezentraler Datenräume und evaluiert die Ergebnisse wissenschaftlich.
+DREAM läuft über drei Jahre im Rahmen der Fördermaßnahme „KMU-innovativ: Informations- und Kommunikationstechnologie (IKT)“ des Bundesministeriums für Forschung, Technologie und Raumfahrt.
+Die Projektpartner bereiten die Ergebnisse so auf, dass sie nicht nur Unternehmen im Verbund zugutekommen.
+KMU sollen später auf Demonstratoren, Leitfäden und Werkzeuge zugreifen können, die ihnen den Einstieg in souveräne Cloud-Technologien erleichtern.

@@ -26,6 +26,11 @@ public:
     vector<responseScorePair> searchKnowledgeBase(string user_query, int responses);
 
 private:
+    vector<string> sentences;
+    unordered_map<string,array<double,300>> sentences_embeddings;
+    unordered_map<string, array<double,300>> embeddings;
+    const string embeddingsPath = R"(D:\germanWordEmbeddings\DE_wordEmbeddings200K_300d_fasttext)";
+    const string sentencesPath = ":/RAG-Knowledge.txt";
     vector<string> loadSentences(const string &path);
     array<double,300> generateSentenceEmbedding(string s);
     unordered_map<string, array<double,300>> generateSentenceEmbeddings(vector<string> s);
@@ -36,6 +41,7 @@ private:
     double calculateMagnitude(array<double,300> a);
     void printSentenceEmbeddings();
     void testResponseRanking();
+    string removePunctuation(string &s);
 
 };
 
