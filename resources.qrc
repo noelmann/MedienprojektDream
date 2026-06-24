@@ -1,5 +1,4 @@
 <RCC>
-    <qresource prefix="/videos"/>
     <qresource prefix="/">
         <file>RAG-Knowledge.txt</file>
         <file>llm_prompt.txt</file>

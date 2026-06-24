@@ -4,7 +4,7 @@
 #include <unordered_map>
 #include <string>
 #include <vector>
-
+#include <QCoreApplication>
 
 using namespace std;
 
@@ -29,7 +29,8 @@ private:
     vector<string> sentences;
     unordered_map<string,array<double,300>> sentences_embeddings;
     unordered_map<string, array<double,300>> embeddings;
-    const string embeddingsPath = R"(D:\germanWordEmbeddings\DE_wordEmbeddings200K_300d_fasttext)";
+    const string embeddingsPath = (QCoreApplication::applicationDirPath() + "/" +  R"(DE_wordEmbeddings200K_300d_fasttext)").toStdString();
+    //const string embeddingsPath = ":/DE_wordEmbeddings200K_300d_fasttext";
     const string sentencesPath = ":/RAG-Knowledge.txt";
     vector<string> loadSentences(const string &path);
     array<double,300> generateSentenceEmbedding(string s);

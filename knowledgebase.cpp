@@ -14,6 +14,7 @@
 #include <locale>
 #include <QFile>
 #include <QDebug>
+#include <QByteArray>
 
 using namespace std;
 
@@ -29,8 +30,9 @@ KnowledgeBase::KnowledgeBase()
     sentences_embeddings = generateSentenceEmbeddings(sentences);
     //printSentenceEmbeddings();
     cout << "done loading" << endl;
+    cout << embeddingsPath << endl;
 
-        //testResponseRanking();
+    testResponseRanking();
 
 }
 
@@ -279,8 +281,8 @@ array<double,300> KnowledgeBase::normalizeSentenceEmbedding(array<double,300> a,
     return embeddings;
 }*/
 
-unordered_map<string, array<double,300>>
-KnowledgeBase::loadWordEmbeddings(const string& path)
+
+unordered_map<string, array<double,300>> KnowledgeBase::loadWordEmbeddings(const string& path)
 {
     ifstream file(path);
 
