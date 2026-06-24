@@ -273,3 +273,26 @@ Die TH Köln entwickelt dateibasierte Technologie-Bausteine für den Betrieb dez
 DREAM läuft über drei Jahre im Rahmen der Fördermaßnahme „KMU-innovativ: Informations- und Kommunikationstechnologie (IKT)“ des Bundesministeriums für Forschung, Technologie und Raumfahrt.
 Die Projektpartner bereiten die Ergebnisse so auf, dass sie nicht nur Unternehmen im Verbund zugutekommen.
 KMU sollen später auf Demonstratoren, Leitfäden und Werkzeuge zugreifen können, die ihnen den Einstieg in souveräne Cloud-Technologien erleichtern.
+Mehr Sicherheit und Datensouveränität in der Cloud.
+Die Forschungsgruppe der TH Köln des DREAM-Projekts besteht aus Prof. Dr. Hoai Viet Nguyen, Vimal Seetohul, Prof. Dr. Matthias Böhmer und Selim Perk.
+Die TH Köln untersucht Architekturen und Technologien für dezentrale IT-Lösungen im Mittelstand.
+Cloud-Infrastrukturen eröffnen Betrieben zwar neue Möglichkeiten der Zusammenarbeit, stellen jedoch insbesondere kleine und mittelständische Unternehmen (KMU) vor Herausforderungen hinsichtlich Cybersicherheit, Datenschutz und Anbieterabhängigkeit.
+In dem neuen Forschungsprojekt „DREAM“ arbeitet die TH Köln daher an dezentralen Angeboten für KMU.
+Durch Cloud-Anwendungen werden IT-Ressourcen wie Server, Speicher, Netzwerke oder Software bereitgestellt.
+Dadurch können Unternehmen von überall auf Daten sowie Programme zugreifen und damit sowohl effizienter als auch agiler zusammenarbeiten.
+Trotz dieser Vorteile verwenden weniger als 40 Prozent der deutschen Unternehmen solche Dienste.
+Grund dafür ist vor allem die Sorge um die digitale Souveränität, da viele Infrastrukturen von US-Marktführern nicht über ein angemessenes Datensicherheits- und Datenschutzniveau verfügen.
+Kickoff-Meeting der Konsortialpartner bei der HK Business Solutions GmbH in Friedrichsthal.
+Im Forschungsprojekt DREAM sollen daher dezentrale Software-Architekturen und Technologien erforscht werden, mit denen die Sicherheit und Datensouveränität bei der Cloud-Nutzung gesteigert sowie die Abhängigkeit von marktdominierenden Angeboten reduziert werden können.
+Im Fokus stehen insbesondere kleine und mittelständische Unternehmen, da die Nutzung von Cloud-Diensten diese aufgrund begrenzter personeller, technischer und rechtlicher Ressourcen vor besondere Herausforderungen stellt.
+Projektergebnisse werden kostenfrei bereitgestellt werden.
+Das Vorhaben wird von der TH Köln gemeinsam mit der HK Business Solutions GmbH (HKBS), der Justus-Liebig-Universität Gießen (JLU) und der luckycloud GmbH umgesetzt.
+Das Team der TH Köln ist dabei für die Entwicklung und Evaluation von Technologie-Bausteinen für den Betrieb dezentraler Datenräume verantwortlich.
+Projektkoordination und Praxisanbindung liegen bei der HKBS.
+Die JLU entwickelt ebenfalls Technologie-Bausteine, untersucht Nutzungs- sowie Anwendungsperspektiven und leitet die Evaluation der Ergebnisse.
+Als unabhängiger Cloud-Provider bringt die luckycloud GmbH ihre Erfahrung ein und unterstützt den Transfer der Ergebnisse in die Praxis.
+Im Rahmen des Projekts soll eine Grundlage geschaffen werden, auf der kleine und mittelständische Unternehmen digitale Dienste sicher einsetzen und langfristig flexibel bleiben können.
+Dazu sollen die Projektergebnisse in Form von Demonstratoren, Leitfäden und Werkzeugen kostenfrei bereitgestellt werden, um KMU den Einstieg in souveräne Cloud-Technologien zu erleichtern.
+Über das Projekt.
+Das Forschungsprojekt „Dezentrale Datenräume für mehr Sicherheit und Souveränität bei der Cloud-Nutzung“ (DREAM) wird an der TH Köln von Prof. Dr. Hoai Viet Nguyen vom Advanced Media Institute und Prof. Dr. Matthias Böhmer vom Cologne Institute for Digital Ecosystems geleitet.
+Das Vorhaben wird im Rahmen der Fördermaßnahme „KMU-innovativ: Informations- und Kommunikationstechnologie (IKT)“ vom Bundesministerium für Forschung, Technologie und Raumfahrt noch bis Oktober 2028 mit rund 1,28 Millionen Euro gefördert.

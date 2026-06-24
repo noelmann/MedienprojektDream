@@ -6,8 +6,9 @@
 #include <QDir>
 #include <QCoreApplication>
 #include <QUrl>
+#include <QNetworkAccessManager>
 
-QString apiKey = qEnvironmentVariable("GROQ_API_KEY_DREAM");
+
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -84,14 +85,21 @@ MainWindow::MainWindow(QWidget *parent)
 
 
     //Todo: auto load item names from video directory
-    ui->videoListWidget->addItem("testA.mp4");
+    ui->videoListWidget->addItem("VerteiltOderDezentral.mp4");
     ui->videoListWidget->addItem("testB.mp4");
-    ui->videoListWidget->addItem("testC.mp4");
 
     connect(ui->sendButton,
             &QPushButton::clicked,
             this,
             &MainWindow::sendMessage);
+
+    llm = new llm_manager(this);
+
+    connect(llm, &llm_manager::answerReady,
+            this, [this](const QString &text)
+            {
+                ui->chatHistory->append("[LLM]: " + text + "\n");
+            });
 
 
 }
@@ -103,17 +111,28 @@ MainWindow::~MainWindow()
 
 void MainWindow::sendMessage()
 {
-    QString prompt = ui->chatInput->toPlainText();
+    QString input = ui->chatInput->toPlainText();
 
-    if (prompt.isEmpty())
+    if (input.isEmpty())
         return;
 
 
     ui->chatInput->clear();
 
     //Todo: replace test code with llm call
-    ui->chatHistory->append("You: " + prompt);
-    ui->chatHistory->append("Response:"+QString::fromStdString(kb.searchKnowledgeBase(prompt.toStdString(),1)[0].response));
+    ui->chatHistory->append("[User]: " + input+"\n");
+    //ui->chatHistory->append("Response:"+QString::fromStdString(kb.searchKnowledgeBase(prompt.toStdString(),1)[0].response));
+
+
+    string kbEntries = "";
+    vector<responseScorePair> rps = kb.searchKnowledgeBase(input.toStdString(),50);
+    for(const auto & rp : rps)
+    {
+        kbEntries += rp.response + "\n";
+    }
+
+    string prompt = llm -> generatePrompt(ui->chatHistory->toPlainText().toStdString(),kbEntries);
+    llm ->queryLLM(QString::fromStdString(prompt));
 
 }
 

@@ -15,6 +15,7 @@
 #include <QMessageBox>
 #include <QListWidgetItem>
 #include "knowledgebase.h"
+#include "llm_manager.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -40,6 +41,7 @@ private:
     QAudioOutput* audioOutput;
     QVideoWidget* videoWidget;
     KnowledgeBase kb;
+    llm_manager *llm;
 
 };
 #endif // MAINWINDOW_H

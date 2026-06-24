@@ -30,7 +30,7 @@ KnowledgeBase::KnowledgeBase()
     //printSentenceEmbeddings();
     cout << "done loading" << endl;
 
-        testResponseRanking();
+        //testResponseRanking();
 
 }
 
@@ -66,7 +66,6 @@ void KnowledgeBase::testResponseRanking()
 {
     vector<responseScorePair> rps;
     string line = "Was ist das Projekt überhaupt und wie hilft es den kleinen und mittelständischen Unternehmen?";
-    line = removePunctuation(line);
     cout << "Please enter sentence for responseRetrieval:" << line << endl;
 
     QString q = QString::fromUtf8(line.c_str()).toLower();
@@ -204,6 +203,8 @@ double KnowledgeBase::calculateSemanticSimilarity(string s1, string s2)
 
 vector<responseScorePair> KnowledgeBase::searchKnowledgeBase(string user_query, int responses)
 {
+    user_query = removePunctuation(user_query);
+    transform(user_query.begin(), user_query.end(), user_query.begin(),::tolower);
     vector<responseScorePair> rps;
     rps.reserve(sentences.size());
 
