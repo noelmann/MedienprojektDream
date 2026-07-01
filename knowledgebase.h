@@ -18,8 +18,6 @@ struct responseScorePair
 class KnowledgeBase
 {
 public:
-
-
     KnowledgeBase();
     //unordered_map<string, array<double,300>> loadWordEmbeddings(string path);
     unordered_map<string, array<double,300>> loadWordEmbeddings(const string &path);
@@ -38,11 +36,10 @@ private:
     array<double,300> addEmbeddings(array<double,300> a,array<double,300> b);
     array<double,300> normalizeSentenceEmbedding(array<double,300> a, int length);
     double calculateSemanticSimilarity(string s1, string s2);
-    double calculateDotProduct(array<double,300> a,array<double,300> b);
-    double calculateMagnitude(array<double,300> a);
+
     void printSentenceEmbeddings();
     void testResponseRanking();
-    string removePunctuation(string &s);
+
 
 };
 

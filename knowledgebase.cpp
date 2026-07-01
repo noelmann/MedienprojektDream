@@ -15,6 +15,7 @@
 #include <QFile>
 #include <QDebug>
 #include <QByteArray>
+#include "helperfunctions.h"
 
 using namespace std;
 
@@ -36,19 +37,7 @@ KnowledgeBase::KnowledgeBase()
 
 }
 
-string KnowledgeBase::removePunctuation(string &s)
-{
-    string temp = "";
-    for(int i =0;i<s.length();i++)
-    {
-        if(!ispunct(s[i]))
-        {
-            temp+=s[i];
-        }
-    }
 
-    return temp;
-}
 
 void KnowledgeBase::printSentenceEmbeddings()
 {
@@ -89,26 +78,7 @@ void KnowledgeBase::testResponseRanking()
     MyFile.close();
 }
 
-double KnowledgeBase::calculateMagnitude(array<double,300> a)
-{
-    double magnitude = 0.0;
-    for(int i = 0;i<a.size();i++)
-    {
-        magnitude+=pow(a[i],2);
-    }
 
-    return sqrt(magnitude);
-}
-double KnowledgeBase::calculateDotProduct(array<double,300> a,array<double,300> b)
-{
-    double dotProduct = 0.0;
-    for(int i = 0;i<a.size();i++)
-    {
-        dotProduct+=(a[i]*b[i]);
-    }
-
-    return dotProduct;
-}
 
 array<double,300> KnowledgeBase::generateSentenceEmbedding(string s)
 {
@@ -153,13 +123,15 @@ double KnowledgeBase::calculateSemanticSimilarity(string s1, string s2)
         s2_embedding = generateSentenceEmbedding(s2);
     }
 
-    double m1 =calculateMagnitude(s1_embedding);
-    double m2 =calculateMagnitude(s2_embedding);
+    //double m1 =calculateMagnitude(s1_embedding);
+    //double m2 =calculateMagnitude(s2_embedding);
+    double m1 = HelperFunctions::calculateMagnitude(s1_embedding);
+    double m2 = HelperFunctions::calculateMagnitude(s2_embedding);
 
     if (m1 == 0.0 || m2 == 0.0)
         return 0.0;
 
-    return calculateDotProduct(s1_embedding,s2_embedding)/(m1*m2);
+    return HelperFunctions::calculateDotProduct(s1_embedding,s2_embedding)/(m1*m2);
 
 }
 
@@ -205,7 +177,7 @@ double KnowledgeBase::calculateSemanticSimilarity(string s1, string s2)
 
 vector<responseScorePair> KnowledgeBase::searchKnowledgeBase(string user_query, int responses)
 {
-    user_query = removePunctuation(user_query);
+    user_query = HelperFunctions::removePunctuation(user_query);
     transform(user_query.begin(), user_query.end(), user_query.begin(),::tolower);
     vector<responseScorePair> rps;
     rps.reserve(sentences.size());
@@ -342,7 +314,7 @@ vector<string> KnowledgeBase::loadSentences(const string &path)
         QString q = QString::fromUtf8(line).trimmed().toLower();
 
         string sentence = q.toUtf8().toStdString();
-        sentence = removePunctuation(sentence);
+        sentence = HelperFunctions::removePunctuation(sentence);
 
         sentences.emplace_back(move(sentence));
     }
