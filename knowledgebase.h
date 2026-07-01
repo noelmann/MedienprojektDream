@@ -5,6 +5,7 @@
 #include <string>
 #include <vector>
 #include <QCoreApplication>
+#include "helperfunctions.h"
 
 using namespace std;
 

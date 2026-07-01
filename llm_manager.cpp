@@ -40,23 +40,11 @@ string llm_manager::loadPrompt(const string &path)
 
 }
 
-string llm_manager::replaceSubString(string target ,string fillerMarker, string filler)
-{
-    size_t pos = target.find(fillerMarker);
-
-    if (pos != std::string::npos)
-    {
-        target.replace(pos, fillerMarker.length(), filler);
-    }
-
-    return target;
-}
-
 string llm_manager::generatePrompt(string transcript,string knowledgeBaseEntries)
 {
     string finalPrompt = basePrompt;
-    finalPrompt = replaceSubString(finalPrompt,"[!!!Transkript!!!]",transcript);
-    finalPrompt = replaceSubString(finalPrompt,"[!!!Datenbankausgaben!!!]",knowledgeBaseEntries);
+    finalPrompt = HelperFunctions::replaceSubString(finalPrompt,"[!!!Transkript!!!]",transcript);
+    finalPrompt = HelperFunctions::replaceSubString(finalPrompt,"[!!!Datenbankausgaben!!!]",knowledgeBaseEntries);
     cout << finalPrompt << endl;
     return finalPrompt;
 }

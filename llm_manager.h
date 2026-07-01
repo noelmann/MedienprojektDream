@@ -5,6 +5,7 @@
 #include <QString>
 #include <QNetworkAccessManager>
 #include <iostream>
+#include "helperfunctions.h"
 
 using namespace std;
 
@@ -27,8 +28,6 @@ private:
     string loadPrompt(const string &path);
     string basePrompt;
     QNetworkAccessManager *manager;
-    string replaceSubString(string target ,string fillerMarker, string filler);
-
 };
 
 #endif

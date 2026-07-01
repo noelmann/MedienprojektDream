@@ -39,3 +39,15 @@ string HelperFunctions::removePunctuation(string &s)
 
     return temp;
 }
+
+string HelperFunctions::replaceSubString(string target ,string fillerMarker, string filler)
+{
+    int pos = target.find(fillerMarker);
+
+    if (pos != std::string::npos)
+    {
+        target.replace(pos, fillerMarker.length(), filler);
+    }
+
+    return target;
+}

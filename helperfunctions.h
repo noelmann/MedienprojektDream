@@ -13,6 +13,7 @@ public:
     static double calculateDotProduct(array<double,300> a,array<double,300> b);
     static double calculateMagnitude(array<double,300> a);
     static string removePunctuation(string &s);
+    static string replaceSubString(string target ,string fillerMarker, string filler);
 };
 
 #endif // HELPERFUNCTIONS_H
