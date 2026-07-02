@@ -64,3 +64,16 @@ string  HelperFunctions::getPromptPath()
 {
     return ":/llm_prompt.txt";
 }
+
+string HelperFunctions::getVideosPath()
+{
+    return (QCoreApplication::applicationDirPath() + "/" +  "videos").toStdString();
+}
+
+QStringList HelperFunctions::getVideonames()
+{
+    QDir directory(QString::fromStdString(getVideosPath()));
+    QStringList videoNames = directory.entryList(QStringList() << "*.mp4" << "*.MP4",QDir::Files);
+
+    return videoNames;
+}

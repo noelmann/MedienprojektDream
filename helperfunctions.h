@@ -4,6 +4,7 @@
 #include <string>
 #include <cmath>
 #include <QCoreApplication>
+#include <QDir>
 
 using namespace std;
 
@@ -18,6 +19,8 @@ public:
     static string getSentencesPath();
     static string getEmbeddingsPath();
     static string getPromptPath();
+    static string getVideosPath();
+    static QStringList getVideonames();
 };
 
 #endif // HELPERFUNCTIONS_H

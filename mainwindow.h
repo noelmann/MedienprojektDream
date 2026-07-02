@@ -16,6 +16,7 @@
 #include <QListWidgetItem>
 #include "knowledgebase.h"
 #include "llm_manager.h"
+#include "helperfunctions.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {

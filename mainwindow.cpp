@@ -85,8 +85,14 @@ MainWindow::MainWindow(QWidget *parent)
 
 
     //Todo: auto load item names from video directory
-    ui->videoListWidget->addItem("VerteiltOderDezentral.mp4");
-    ui->videoListWidget->addItem("testB.mp4");
+    //ui->videoListWidget->addItem("VerteiltOderDezentral.mp4");
+    //ui->videoListWidget->addItem("testB.mp4");
+
+    QStringList l = HelperFunctions::getVideonames();
+    for(const QString& s : l)
+    {
+        ui->videoListWidget->addItem(s);
+    }
 
     connect(ui->sendButton,
             &QPushButton::clicked,
@@ -119,7 +125,6 @@ void MainWindow::sendMessage()
 
     ui->chatInput->clear();
 
-    //Todo: replace test code with llm call
     ui->chatHistory->append("[User]: " + input+"\n");
     //ui->chatHistory->append("Response:"+QString::fromStdString(kb.searchKnowledgeBase(prompt.toStdString(),1)[0].response));
 
@@ -138,11 +143,9 @@ void MainWindow::sendMessage()
 
 void MainWindow::loadSelectedVideo(QListWidgetItem *item)
 {
-    QString filename = item->text();
+    string filename = item->text().toStdString();
 
-    QString path =
-        QCoreApplication::applicationDirPath()
-        + "/videos/" + filename;
+    QString path = QString::fromStdString(HelperFunctions::getVideosPath() + "/" + filename);
 
     player->setSource(QUrl::fromLocalFile(path));
     player->play();
