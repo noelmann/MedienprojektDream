@@ -26,12 +26,12 @@ KnowledgeBase::KnowledgeBase()
 {
     locale::global(std::locale(""));
     cout.imbue(std::locale());
-    embeddings = loadWordEmbeddings(embeddingsPath);
-    sentences = loadSentences(sentencesPath);
+    embeddings = loadWordEmbeddings(HelperFunctions::getEmbeddingsPath());
+    sentences = loadSentences(HelperFunctions::getSentencesPath());
     sentences_embeddings = generateSentenceEmbeddings(sentences);
     //printSentenceEmbeddings();
     cout << "done loading" << endl;
-    cout << embeddingsPath << endl;
+    cout << HelperFunctions::getEmbeddingsPath() << endl;
 
     testResponseRanking();
 

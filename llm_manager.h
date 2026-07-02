@@ -24,7 +24,6 @@ signals:
 
 private:
     QString apiKey = qEnvironmentVariable("GROQ_API_KEY_DREAM");
-    const string promptPath = ":/llm_prompt.txt";
     string loadPrompt(const string &path);
     string basePrompt;
     QNetworkAccessManager *manager;

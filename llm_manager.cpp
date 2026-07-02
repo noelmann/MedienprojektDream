@@ -4,7 +4,7 @@
 #include <QNetworkRequest>
 #include <QNetworkReply>
 #include <QUrl>
-
+#include "helperfunctions.h"
 #include <QJsonObject>
 #include <QJsonArray>
 #include <QJsonDocument>
@@ -15,7 +15,7 @@
 llm_manager::llm_manager(QObject *parent) : QObject(parent)
 {
     manager = new QNetworkAccessManager(this);
-    basePrompt = loadPrompt(promptPath);
+    basePrompt = loadPrompt(HelperFunctions::getPromptPath());
 }
 
 string llm_manager::loadPrompt(const string &path)

@@ -3,6 +3,7 @@
 #include <array>
 #include <string>
 #include <cmath>
+#include <QCoreApplication>
 
 using namespace std;
 
@@ -14,6 +15,9 @@ public:
     static double calculateMagnitude(array<double,300> a);
     static string removePunctuation(string &s);
     static string replaceSubString(string target ,string fillerMarker, string filler);
+    static string getSentencesPath();
+    static string getEmbeddingsPath();
+    static string getPromptPath();
 };
 
 #endif // HELPERFUNCTIONS_H

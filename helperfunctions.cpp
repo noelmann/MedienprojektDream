@@ -51,3 +51,16 @@ string HelperFunctions::replaceSubString(string target ,string fillerMarker, str
 
     return target;
 }
+
+string HelperFunctions::getSentencesPath()
+{
+    return ":/RAG-Knowledge.txt";
+}
+string HelperFunctions::getEmbeddingsPath()
+{
+    return (QCoreApplication::applicationDirPath() + "/" +  R"(DE_wordEmbeddings100K_300d_fasttext)").toStdString();
+}
+string  HelperFunctions::getPromptPath()
+{
+    return ":/llm_prompt.txt";
+}
