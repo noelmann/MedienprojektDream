@@ -74,10 +74,18 @@ string  HelperFunctions::getPromptPath()
     return ":/llm_prompt.txt";
 }
 
-//returns the path to stored videos that are displayed in the video player
+//returns the path to stored videos that are displayed in the video player and creates the empty folder if it does not already exist
 string HelperFunctions::getVideosPath()
 {
-    return (QCoreApplication::applicationDirPath() + "/" +  "videos").toStdString();
+    const QString vPath = QString::fromStdString(QCoreApplication::applicationDirPath().toStdString() + "/" + "videos");
+
+    QDir dir(vPath);
+    if(!dir.exists())
+    {
+        dir.mkdir(".");
+    }
+
+    return vPath.toStdString();
 }
 
 //returns the video file names
