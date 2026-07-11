@@ -24,6 +24,7 @@ using namespace std;
 
 KnowledgeBase::KnowledgeBase()
 {
+    //loads the rag knowledgefile and word embeddings that are used for generating sentence embeddings
     locale::global(std::locale(""));
     cout.imbue(std::locale());
     embeddings = loadWordEmbeddings(HelperFunctions::getEmbeddingsPath());
@@ -36,7 +37,6 @@ KnowledgeBase::KnowledgeBase()
     testResponseRanking();
 
 }
-
 
 
 void KnowledgeBase::printSentenceEmbeddings()
@@ -53,6 +53,7 @@ void KnowledgeBase::printSentenceEmbeddings()
     }
 }
 
+//a test function to test the semantic similarity search
 void KnowledgeBase::testResponseRanking()
 {
     vector<responseScorePair> rps;
@@ -78,8 +79,7 @@ void KnowledgeBase::testResponseRanking()
     MyFile.close();
 }
 
-
-
+//calculates a normalized sentence embedding
 array<double,300> KnowledgeBase::generateSentenceEmbedding(string s)
 {
     array<double,300> vec = {0.0};
@@ -101,6 +101,7 @@ array<double,300> KnowledgeBase::generateSentenceEmbedding(string s)
     return normalizeSentenceEmbedding(vec,wordCount);
 }
 
+//calculates the cosine similarity(semantic) of two sentences
 double KnowledgeBase::calculateSemanticSimilarity(string s1, string s2)
 {
     array<double,300> s1_embedding = {0.0};
@@ -175,6 +176,7 @@ double KnowledgeBase::calculateSemanticSimilarity(string s1, string s2)
     return rps;
 }*/
 
+//calculates the semantic similarity between a user query and the knowledgebase entry and returns a specified number of top responses
 vector<responseScorePair> KnowledgeBase::searchKnowledgeBase(string user_query, int responses)
 {
     user_query = HelperFunctions::removePunctuation(user_query);
@@ -202,7 +204,7 @@ vector<responseScorePair> KnowledgeBase::searchKnowledgeBase(string user_query, 
     return rps;
 }
 
-
+//adds two embeddings vectors
 array<double,300> KnowledgeBase::addEmbeddings(array<double,300> a,array<double,300> b)
 {
     array<double,300> c;
@@ -213,6 +215,7 @@ array<double,300> KnowledgeBase::addEmbeddings(array<double,300> a,array<double,
     return c;
 }
 
+//normalizes the sentence embedding by length(actually not necessary when using cosine similarity)
 array<double,300> KnowledgeBase::normalizeSentenceEmbedding(array<double,300> a, int length)
 {
     for(int i =0;i<a.size();i++)
@@ -253,10 +256,19 @@ array<double,300> KnowledgeBase::normalizeSentenceEmbedding(array<double,300> a,
     return embeddings;
 }*/
 
-
+//loads the word embeddings into memory and returns an error if the word embedding file doesnt not exist
 unordered_map<string, array<double,300>> KnowledgeBase::loadWordEmbeddings(const string& path)
 {
     ifstream file(path);
+
+    if(!file.is_open())
+    {
+        QMessageBox::critical(
+            nullptr,
+            "Error",
+            "Word embedding file not found.\nPlease add it to the application directory and restart the application."
+            );
+    }
 
     const int loadcount = 100000;
 
@@ -295,7 +307,7 @@ unordered_map<string, array<double,300>> KnowledgeBase::loadWordEmbeddings(const
     return embeddings;
 }
 
-
+//loads the rag knowledgefile
 vector<string> KnowledgeBase::loadSentences(const string &path)
 {
     QFile file(QString::fromStdString(path));
@@ -322,6 +334,7 @@ vector<string> KnowledgeBase::loadSentences(const string &path)
     return sentences;
 }
 
+//generates sentence embeddings of the rag knowledge file entries
 unordered_map<string, array<double,300>> KnowledgeBase::generateSentenceEmbeddings(vector<string> s)
 {
     unordered_map<string,array<double,300>> sentenceEmbeddings;

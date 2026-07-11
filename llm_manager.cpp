@@ -40,6 +40,7 @@ string llm_manager::loadPrompt(const string &path)
 
 }
 
+//adds the transcript of the conversation with the llm as well as the relevant entries from the knowledgebase to prompt template
 string llm_manager::generatePrompt(string transcript,string knowledgeBaseEntries)
 {
     string finalPrompt = basePrompt;
@@ -49,6 +50,8 @@ string llm_manager::generatePrompt(string transcript,string knowledgeBaseEntries
     return finalPrompt;
 }
 
+
+//makes the request to the groq api using the prompt
 void llm_manager::queryLLM(const QString &user_query)
 {
 

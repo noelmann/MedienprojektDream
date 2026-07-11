@@ -88,6 +88,10 @@ MainWindow::MainWindow(QWidget *parent)
     //ui->videoListWidget->addItem("VerteiltOderDezentral.mp4");
     //ui->videoListWidget->addItem("testB.mp4");
 
+
+
+
+    //adds the videos to the selection bar of the videoplayer gui
     QStringList l = HelperFunctions::getVideonames();
     for(const QString& s : l)
     {
@@ -101,6 +105,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     llm = new llm_manager(this);
 
+    //adds the response of the llm to the chat history
     connect(llm, &llm_manager::answerReady,
             this, [this](const QString &text)
             {
@@ -136,11 +141,13 @@ void MainWindow::sendMessage()
         kbEntries += rp.response + "\n";
     }
 
+    //queries the llm with a prompt containing the most relevant knowledge base entries along with the chat history
     string prompt = llm -> generatePrompt(ui->chatHistory->toPlainText().toStdString(),kbEntries);
     llm ->queryLLM(QString::fromStdString(prompt));
 
 }
 
+//loads a video file that was selected in the selection menu
 void MainWindow::loadSelectedVideo(QListWidgetItem *item)
 {
     string filename = item->text().toStdString();
