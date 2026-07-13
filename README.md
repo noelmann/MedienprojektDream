@@ -1,3 +1,6 @@
+# Dream Explainer
+![](./MedienprojektDREAM_Preview.gif)
+
 # What is it?
 It is a video player written in C++ based on the QT framework with a RAG LLM-based question answering system(it uses the GROQ API).
 It was made as a concept to demonstrate the viability of combining a video player with a LLM to enhance the ability of a user to learn and understand new information received in the form of an educational video in regard to [Project Dream](https://www.th-koeln.de/informatik-und-ingenieurwissenschaften/dream---dezentrale-datenraeume-fuer-mehr-sicherheit-und-souveraenitaet-bei-der-cloud-nutzung_133527.php).
