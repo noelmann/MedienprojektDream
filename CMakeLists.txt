@@ -33,6 +33,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         llm_manager.h llm_manager.cpp
         helperfunctions.h helperfunctions.cpp
         helperfunctions.cpp
+        README.md
 
 
     )
