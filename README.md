@@ -8,7 +8,11 @@ It was made as a concept to demonstrate the viability of combining a video playe
 
 # How to install it.
 1. Clone the repository.
-2. Build the project with CMake.
+2. Build the project(for example with MinGW-w64).
+- Launch the MinGW-w64 shell
+- Go into the folder of the cloned repository.
+- Run: "cmake -G "MinGW Makefiles" -DCMAKE_PREFIX_PATH=/c/Qt/6.9.3/mingw_64 -B build"(your QT path may be different)
+- Finally run : "cmake --build build"
 3. Unpack the word embedding zip file and move the embedding file into the build folder.
 4. Add your GROQ-API Key to an environment variable named "GROQ_API_KEY_DREAM".
 5. Run the application. A folder named "videos" will be automatically created.
